@@ -26,13 +26,13 @@
   <body class="body">
     <div class="container">
       <h1>Lista Zadań</h1>
-      <form class="task">
+      <form class="task js-form">
         <div class="task__box">
           <h2 class="task__header">Dodaj nowe zadanie</h2>
         </div>
         <fieldset class="task__box">
           <input
-            class="task__input"
+            class="task__input js-newTask"
             type="text"
             placeholder="Co jest do zrobienia?"
           />
@@ -44,27 +44,8 @@
           <h2 class="inventory__header">Lista zadań</h2>
         </div>
         <div class="inventory__box">
-          <ul class="inventory__items">
-            <li class="inventory__item">
-              <button class="inventory__button">✔️</button>
-              <p class="inventory__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate neque est ad a dolore reiciendis hic ullam magnam
-                numquam quos eaque vitae corporis sunt quia, molestias nemo
-                laudantium dignissimos! Debitis!
-              </p>
-              <button class="inventory__button inventory__button--delete">🗑️</button>
-            </li>
-            <li class="inventory__item">
-              <button class="inventory__button">✔️</button>
-              <p class="inventory__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate neque est ad a dolore reiciendis hic ullam magnam
-                numquam quos eaque vitae corporis sunt quia, molestias nemo
-                laudantium dignissimos! Debitis!
-              </p>
-              <button class="inventory__button inventory__button--delete">🗑️</button>
-            </li>
+          <ul class="inventory__items js-tasks">
+            
           </ul>
         </div>
       </div>
