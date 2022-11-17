@@ -29,6 +29,10 @@
     flex-grow: 1;
 }
 
+.inventory__text--done {
+    text-decoration: line-through;
+}
+
 .inventory__button {
     width: 40px;
     height: 40px;
