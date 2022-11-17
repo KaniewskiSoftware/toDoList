@@ -19,3 +19,15 @@ html {
 .container {
     padding: 60px;
 }
+
+@media(max-width: 767px) {
+    .container {
+        padding: 40px;
+    }
+}
+
+@media(max-width: 475px) {
+    .container {
+        padding: 20px;
+    }
+}
