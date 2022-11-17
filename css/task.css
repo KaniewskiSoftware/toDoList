@@ -19,6 +19,7 @@
 
 .task__input {
     flex-grow: 1;
+    border: 1px solid #b9b9b9;
 }
 
 .task__button {
