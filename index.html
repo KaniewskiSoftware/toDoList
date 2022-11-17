@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inventorya Zadań</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/task.css" />
+    <link rel="stylesheet" href="css/inventory.css" />
+  </head>
+  <body class="body">
+    <div class="container">
+      <h1>Lista Zadań</h1>
+      <form class="task">
+        <div class="task__box">
+          <h2 class="task__header">Dodaj nowe zadanie</h2>
+        </div>
+        <fieldset class="task__box">
+          <input
+            class="task__input"
+            type="text"
+            placeholder="Co jest do zrobienia?"
+          />
+          <button class="task__button">Dodaj zadanie</button>
+        </fieldset>
+      </form>
+      <div class="inventory">
+        <div class="inventory__box">
+          <h2 class="inventory__title"></h2>
+        </div>
+        <div class="inventory__box">
+          <ul class="inventory__items">
+            <li class="inventory__item">
+              <button class="inventory__button"></button>
+              <p>Umyj okna</p>
+              <button class="inventory__button"></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
