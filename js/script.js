@@ -24,10 +24,26 @@
   };
 
   const toggleTaskStatus = (taskIndex) => {
-    tasks[taskIndex].done
-      ? (tasks[taskIndex].done = false)
-      : (tasks[taskIndex].done = true);
+    tasks[taskIndex].done = !tasks[taskIndex].done;
     render();
+  };
+
+  const bindEvents = () => {
+    const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+    toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
+      toggleDoneButton.addEventListener("click", () => {
+        toggleTaskStatus(taskIndex);
+      });
+    });
+
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    removeButtons.forEach((removeButton, taskIndex) => {
+      removeButton.addEventListener("click", () => {
+        removeTask(taskIndex);
+      });
+    });
   };
 
   const render = () => {
@@ -51,21 +67,7 @@
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
 
-    const doneButtons = document.querySelectorAll(".js-done");
-
-    doneButtons.forEach((doneButton, taskIndex) => {
-      doneButton.addEventListener("click", () => {
-        toggleTaskStatus(taskIndex);
-      });
-    });
-
-    const removeButtons = document.querySelectorAll(".js-remove");
-
-    removeButtons.forEach((removeButton, taskIndex) => {
-      removeButton.addEventListener("click", () => {
-        removeTask(taskIndex);
-      });
-    });
+    bindEvents();
   };
 
   const onFormSubmit = (event) => {
