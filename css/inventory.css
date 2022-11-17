@@ -1,0 +1,40 @@
+.inventory__box {
+    padding: 20px;
+    border: 1px solid #ededed;
+    background-color: #fff;
+}
+
+.inventory__box--first {
+    margin-top: 20px;
+}
+
+.inventory__header {
+    margin: 0;
+    font-size: 20px;
+}
+
+.inventory__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.inventory__item {
+    display: flex;
+    margin: 10px;
+}
+
+.inventory__text {
+    word-break: break-word;
+}
+
+.inventory__button {
+    align-self: center;
+    padding: 15px;
+    margin: 10px;
+    background-color: #1a7b1e;
+}
+
+.inventory__button--delete {
+    background-color: #ec293a;
+}
