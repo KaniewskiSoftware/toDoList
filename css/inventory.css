@@ -26,11 +26,14 @@
 
 .inventory__text {
     word-break: break-word;
+    flex-grow: 1;
 }
 
 .inventory__button {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
     align-self: center;
-    padding: 10px;
     margin: 10px;
     background-color: #1a7b1e;
 }
