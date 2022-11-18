@@ -23,6 +23,7 @@
 }
 
 .task__button {
+    border: none;
     margin-left: 20px;
     padding: 10px 20px;
     background-color: #007382;

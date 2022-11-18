@@ -47,6 +47,7 @@
     align-self: center;
     margin: 10px;
     background-color: #1a7b1e;
+    border: none;
 }
 
 .inventory__button--remove {
