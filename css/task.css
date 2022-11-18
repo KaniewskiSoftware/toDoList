@@ -1,20 +1,26 @@
+.task {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+
+.task__header {
+    margin: 20px;
+    font-size: 20px;
+}
+
 .task__box {
     display: flex;
     margin: 0;
     padding: 20px;
-    border: 1px solid #ededed;
-    background-color: #fff;
+    border-top: 2px solid #ededed;
 }
 
 @media(max-width: 767px) {
     .task__box {
         flex-direction: column;
     }
-}
-
-.task__header {
-    margin: 0;
-    font-size: 20px;
 }
 
 .task__input {
