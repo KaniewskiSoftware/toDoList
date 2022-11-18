@@ -4,6 +4,12 @@
     background-color: #fff;
 }
 
+@media(max-width: 767px) {
+    .inventory__box {
+        padding: 5px;
+    }
+}
+
 .inventory__box--first {
     margin-top: 20px;
 }
@@ -35,8 +41,8 @@
 }
 
 .inventory__button {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     flex-shrink: 0;
     align-self: center;
     margin: 10px;
