@@ -16,20 +16,3 @@ html {
     color: #000000;
     line-height: 1.15;
 }
-
-.container {
-    flex-basis: 1000px;
-    padding: 60px;
-}
-
-@media(max-width: 767px) {
-    .container {
-        padding: 40px;
-    }
-}
-
-@media(max-width: 475px) {
-    .container {
-        padding: 20px;
-    }
-}
