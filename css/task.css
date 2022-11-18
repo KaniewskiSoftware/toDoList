@@ -19,6 +19,7 @@
 
 .task__input {
     flex-grow: 1;
+    padding: 10px 20px;
     border: 1px solid #b9b9b9;
 }
 
@@ -41,6 +42,5 @@
     .task__button {
         margin-top: 20px;
         margin-left: 0;
-        padding: 5px
     }
 }
