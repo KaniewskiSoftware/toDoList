@@ -2,7 +2,7 @@
 
 ## Preview
 
-!["To do list in action"](images/animation.gif)
+!["To do list in action"](images/animation2.gif)
 
 ## Demo
 
