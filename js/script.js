@@ -61,15 +61,24 @@
     bindEvents();
   };
 
+  const clearTaskContent = () => {
+    const form = document.querySelector(".js-form");
+    form.reset();
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    const newTaskContent = document.querySelector(".js-newTask").value.trim();
-    if (newTaskContent === "") {
+    const newTaskContent = document.querySelector(".js-newTask");
+    if (newTaskContent.value.trim() === "") {
+      clearTaskContent();
+      newTaskContent.focus();
       return;
     }
 
-    addNewTask(newTaskContent);
+    addNewTask(newTaskContent.value.trim());
+    clearTaskContent();
+    newTaskContent.focus();
   };
 
   const init = () => {
