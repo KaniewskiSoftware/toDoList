@@ -1,7 +1,13 @@
-.inventory__box {
-    padding: 20px 20px 40.5px;
-    border: 1px solid #ededed;
+.inventory {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
     background-color: #fff;
+}
+
+.inventory__header {
+    margin: 20px;
+    font-size: 20px;
 }
 
 @media(max-width: 767px) {
@@ -10,18 +16,10 @@
     }
 }
 
-.inventory__box--first {
-    margin-top: 20px;
-}
-
-.inventory__header {
-    margin: 0;
-    font-size: 20px;
-}
-
 .inventory__items {
     margin: 0;
-    padding: 0;
+    padding: 20px 20px 40.5px;
+    border-top: 2px solid #ededed;
     list-style: none;
 }
 

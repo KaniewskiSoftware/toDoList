@@ -28,25 +28,21 @@
       <h1>Lista Zadań</h1>
       <section class="task">
         <h2 class="task__header">Dodaj nowe zadanie</h2>
-        <form class="task__box js-form">
-            <input
-              class="task__input js-newTask"
-              type="text"
-              placeholder="Co jest do zrobienia?"
-              autofocus
-            />
-            <button class="task__button">Dodaj zadanie</button>
+        <form class="task__form js-form">
+          <input
+            class="task__input js-newTask"
+            type="text"
+            placeholder="Co jest do zrobienia?"
+            autofocus
+          />
+          <button class="task__button">Dodaj zadanie</button>
         </form>
       </section>
 
-      <div class="inventory">
-        <div class="inventory__box inventory__box--first">
-          <h2 class="inventory__header">Lista zadań</h2>
-        </div>
-        <div class="inventory__box">
-          <ul class="inventory__items js-tasks"></ul>
-        </div>
-      </div>
+      <section class="inventory">
+        <h2 class="inventory__header">Lista zadań</h2>
+        <ul class="inventory__items js-tasks"></ul>
+      </section>
     </div>
   </body>
 </html>
