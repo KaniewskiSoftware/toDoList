@@ -1,15 +1,6 @@
-.task {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-}
 
-.task__header {
-    margin: 20px;
-    font-size: 20px;
-}
 
-.task__form {
+.form {
     display: flex;
     margin: 0;
     padding: 20px;
@@ -17,18 +8,18 @@
 }
 
 @media(max-width: 767px) {
-    .task__form {
+    .form {
         flex-direction: column;
     }
 }
 
-.task__input {
+.form__input {
     flex-grow: 1;
     padding: 10px 20px;
     border: 1px solid #b9b9b9;
 }
 
-.task__button {
+.form__button {
     border: none;
     margin-left: 20px;
     padding: 10px 20px;
@@ -37,14 +28,14 @@
 }
 
 @media(max-width: 767px) {
-    .task__button {
+    .form__button {
         margin-top: 20px;
         margin-left: 0;
     }
 }
 
 @media(max-width: 475px) {
-    .task__button {
+    .form__button {
         margin-top: 20px;
         margin-left: 0;
     }

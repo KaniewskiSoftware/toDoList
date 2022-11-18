@@ -1,38 +1,26 @@
-.inventory {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    background-color: #fff;
-}
-
-.inventory__header {
-    margin: 20px;
-    font-size: 20px;
-}
-
-.inventory__items {
+.tasks {
     margin: 0;
     padding: 20px 20px 30px;
     border-top: 2px solid #ededed;
     list-style: none;
 }
 
-.inventory__item {
+.tasks__item {
     display: flex;
     margin: 10px;
     border-bottom: 1px solid #b9b9b9;
 }
 
-.inventory__text {
+.tasks__text {
     word-break: break-word;
     flex-grow: 1;
 }
 
-.inventory__text--done {
+.tasks__text--done {
     text-decoration: line-through;
 }
 
-.inventory__button {
+.tasks__button {
     width: 35px;
     height: 35px;
     flex-shrink: 0;
@@ -42,6 +30,6 @@
     border: none;
 }
 
-.inventory__button--remove {
+.tasks__button--remove {
     background-color: #ec293a;
 }
