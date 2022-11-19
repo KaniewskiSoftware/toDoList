@@ -1,10 +1,6 @@
 {
-  let tasks = [
-    {
-      content: "Test",
-      done: "false",
-    },
-  ];
+  let tasks = [];
+  let hideDoneTasks = false;
 
   const addNewTask = (newTaskContent) => {
     tasks = [...tasks, { content: newTaskContent }];
@@ -28,7 +24,7 @@
     render();
   };
 
-  const bindEvents = () => {
+  const bindToggleDoneEvents = () => {
     const toggleDoneButtons = document.querySelectorAll(".js-done");
 
     toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
@@ -36,7 +32,9 @@
         toggleTaskStatus(taskIndex);
       });
     });
+  };
 
+  const bindRemoveEvents = () => {
     const removeButtons = document.querySelectorAll(".js-remove");
 
     removeButtons.forEach((removeButton, taskIndex) => {
@@ -44,6 +42,28 @@
         removeTask(taskIndex);
       });
     });
+  };
+
+  const bindToggleDoneTasksHiddenButton = () => {
+    if (tasks.length) {
+      const toggleDoneTasksHiddenButton = document.querySelector(
+        ".js-toggleDoneTasksHiddenButton"
+      );
+      toggleDoneTasksHiddenButton.addEventListener("click", () => {
+        toggleDoneTasksHidden();
+      });
+    }
+  };
+
+  const bindSetAllTasksAsDoneButton = () => {
+    if (tasks.length) {
+      const setAllTasksAsDoneButton = document.querySelector(
+        ".js-setAllTasksAsDoneButton"
+      );
+      setAllTasksAsDoneButton.addEventListener("click", () => {
+        setAllTasksAsDone();
+      });
+    }
   };
 
   const renderTasks = () => {
@@ -65,15 +85,33 @@
     }
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
-
-    bindEvents();
   };
 
-  const renderButtons = () => {};
+  const renderButtons = () => {
+    let htmlString = "";
+
+    if (tasks.length) {
+      htmlString += `
+      <button class="section__button js-toggleDoneTasksHiddenButton">
+      Ukryj ukończone
+      </button>
+      <button class="section__button js-setAllTasksAsDoneButton">
+      Ukończ wszystkie
+      </button>
+      `;
+    }
+
+    document.querySelector(".js-sectionButtonsBox").innerHTML = htmlString;
+  };
 
   const render = () => {
     renderTasks();
     renderButtons();
+
+    bindRemoveEvents();
+    bindToggleDoneEvents();
+    bindToggleDoneTasksHiddenButton();
+    bindSetAllTasksAsDoneButton();
   };
 
   const clearTaskContent = () => {
