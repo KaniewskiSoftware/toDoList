@@ -25,6 +25,7 @@
     padding: 10px 20px;
     background-color: #007382;
     color: #fff;
+    transition: background-color .5s, transform 1s;
 }
 
 @media(max-width: 767px) {
@@ -39,4 +40,9 @@
         margin-top: 20px;
         margin-left: 0;
     }
+}
+
+.form__button:hover {
+    background-color: #00b0c7;
+    transform: scale(1.1);
 }

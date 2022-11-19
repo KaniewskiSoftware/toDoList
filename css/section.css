@@ -5,7 +5,41 @@
     background-color: #fff;
 }
 
+.section__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .section__box {
+        flex-direction: column;
+    }
+}
+
 .section__header {
     margin: 20px;
     font-size: 20px;
+}
+
+@media (max-width: 767px) {
+    .section__buttons {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+}
+.section__button {
+    padding: 20px;
+    color: #007382;
+    background-color: #fff;
+    border: none;
+    transition: color .5s;
+}
+
+.section__button:hover {
+    color: #00b0c7;
+}
+
+.section__button--hidden {
+    display: none;
 }

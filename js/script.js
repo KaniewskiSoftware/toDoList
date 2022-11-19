@@ -1,21 +1,30 @@
 {
-  const tasks = [];
+  let tasks = [
+    {
+      content: "Test",
+      done: "false",
+    },
+  ];
 
   const addNewTask = (newTaskContent) => {
-    tasks.push({
-      content: newTaskContent,
-    });
+    tasks = [...tasks, { content: newTaskContent }];
 
     render();
   };
 
   const removeTask = (taskIndex) => {
-    tasks.splice(taskIndex, 1);
+    tasks = [...tasks.slice(0, taskIndex), ...tasks.slice(taskIndex + 1)];
+
     render();
   };
 
   const toggleTaskStatus = (taskIndex) => {
-    tasks[taskIndex].done = !tasks[taskIndex].done;
+    tasks = [
+      ...tasks.slice(0, taskIndex),
+      { ...tasks[taskIndex], done: !tasks[taskIndex].done },
+      ...tasks.slice(taskIndex + 1),
+    ];
+
     render();
   };
 
@@ -37,18 +46,17 @@
     });
   };
 
-  const render = () => {
+  const renderTasks = () => {
     let htmlString = "";
 
     for (const task of tasks) {
       htmlString += `
             <li class="tasks__item">
-              <button class="tasks__button js-done">${
-                task.done ? "✔️" : ""
-              }</button>
-              <p class="tasks__text ${
-                task.done ? "tasks__text--done" : ""
-              }">${task.content}</p>
+              <button class="tasks__button tasks__button--toggleDone js-done">
+              ${task.done ? "✔️" : ""}
+              </button>
+              <p class="tasks__text ${task.done ? "tasks__text--done" : ""}">
+              ${task.content}</p>
               <button class="tasks__button tasks__button--remove js-remove">
                 🗑️
               </button>
@@ -59,6 +67,13 @@
     document.querySelector(".js-tasks").innerHTML = htmlString;
 
     bindEvents();
+  };
+
+  const renderButtons = () => {};
+
+  const render = () => {
+    renderTasks();
+    renderButtons();
   };
 
   const clearTaskContent = () => {

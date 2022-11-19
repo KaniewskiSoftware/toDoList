@@ -26,10 +26,22 @@
     flex-shrink: 0;
     align-self: center;
     margin: 10px;
-    background-color: #1a7b1e;
     border: none;
+    transition: background-color .5s;
+}
+
+.tasks__button--toggleDone {
+    background-color: #1a7b1e;
+}
+
+.tasks__button--toggleDone:hover {
+    background-color: #36b43a;
 }
 
 .tasks__button--remove {
     background-color: #ec293a;
+}
+
+.tasks__button--remove:hover {
+    background-color: #ff081d;
 }
