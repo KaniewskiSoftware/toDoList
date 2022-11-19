@@ -25,7 +25,7 @@
   };
 
   const setAllTasksAsDone = () => {
-    tasks = tasks.map((task) => ({...task, done: true}));
+    tasks = tasks.map((task) => ({ ...task, done: true }));
 
     render();
   };
@@ -109,7 +109,9 @@
       <button class="section__button js-toggleDoneTasksHiddenButton">
       ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
       </button>
-      <button ${tasks.every((task) => task.done) ? "disabled" : ""} class="section__button js-setAllTasksAsDoneButton">
+      <button ${
+        tasks.every((task) => task.done) ? "disabled" : ""
+      } class="section__button js-setAllTasksAsDoneButton">
       Ukończ wszystkie
       </button>
       `;
