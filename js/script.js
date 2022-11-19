@@ -61,6 +61,7 @@
       const toggleDoneTasksHiddenButton = document.querySelector(
         ".js-toggleDoneTasksHiddenButton"
       );
+
       toggleDoneTasksHiddenButton.addEventListener("click", () => {
         toggleDoneTasksHidden();
       });
@@ -72,6 +73,7 @@
       const setAllTasksAsDoneButton = document.querySelector(
         ".js-setAllTasksAsDoneButton"
       );
+
       setAllTasksAsDoneButton.addEventListener("click", () => {
         setAllTasksAsDone();
       });
@@ -83,9 +85,8 @@
 
     for (const task of tasks) {
       htmlString += `
-            <li class="tasks__item ${
-              task.done && hideDoneTasks ? "tasks__item--hidden" : ""
-            }">
+            <li class="tasks__item 
+            ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""}">
               <button class="tasks__button tasks__button--toggleDone js-done">
               ${task.done ? "✔️" : ""}
               </button>
@@ -109,9 +110,9 @@
       <button class="section__button js-toggleDoneTasksHiddenButton">
       ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
       </button>
-      <button ${
-        tasks.every((task) => task.done) ? "disabled" : ""
-      } class="section__button js-setAllTasksAsDoneButton">
+      <button 
+      ${tasks.every((task) => task.done) ? "disabled" : ""} 
+      class="section__button js-setAllTasksAsDoneButton">
       Ukończ wszystkie
       </button>
       `;
