@@ -24,6 +24,13 @@
     render();
   };
 
+  const toggleDoneTasksHidden = () => {
+    if(tasks.some(({done}) => done))
+    hideDoneTasks = !hideDoneTasks;
+
+    render();
+  }
+
   const bindToggleDoneEvents = () => {
     const toggleDoneButtons = document.querySelectorAll(".js-done");
 
@@ -71,7 +78,7 @@
 
     for (const task of tasks) {
       htmlString += `
-            <li class="tasks__item">
+            <li class="tasks__item ${task.done && hideDoneTasks ? "tasks__item--hidden" : ""}">
               <button class="tasks__button tasks__button--toggleDone js-done">
               ${task.done ? "✔️" : ""}
               </button>
@@ -93,7 +100,7 @@
     if (tasks.length) {
       htmlString += `
       <button class="section__button js-toggleDoneTasksHiddenButton">
-      Ukryj ukończone
+      ${hideDoneTasks ? "Pokaż ukończone" : "Ukryj ukończone"}
       </button>
       <button class="section__button js-setAllTasksAsDoneButton">
       Ukończ wszystkie

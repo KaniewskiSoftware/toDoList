@@ -10,6 +10,9 @@
     margin: 10px;
     border-bottom: 1px solid #b9b9b9;
 }
+.tasks__item--hidden{
+    display: none;
+}
 
 .tasks__text {
     word-break: break-word;
