@@ -40,6 +40,13 @@
     color: #00b0c7;
 }
 
+.section__button:disabled {
+    color:rgb(199, 199, 199);
+}
+.section__button:disabled:hover {
+    color:rgb(199, 199, 199);
+}
+
 .section__button--hidden {
     display: none;
 }
