@@ -6,7 +6,7 @@
 
 ## Demo
 
-[ToDoList](https://st4rkmano.github.io/toDoList/)
+[ToDoList](https://kaniewskisoftware.github.io/toDoList/)
 
 ## Description
 
