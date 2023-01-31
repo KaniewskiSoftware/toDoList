@@ -3,7 +3,7 @@
     let tasks = [];
     let hideDoneTasks = false;
     const addNewTask = (newTaskContent) => {
-        tasks = [...tasks, { content: newTaskContent }];
+        tasks = [...tasks, { content: newTaskContent, done: false }];
         render();
     };
     const removeTask = (taskIndex) => {
@@ -50,21 +50,17 @@
     const bindToggleDoneTasksHiddenButton = () => {
         if (tasks.length) {
             const toggleDoneTasksHiddenButton = document.querySelector(".js-toggleDoneTasksHiddenButton");
-            if (toggleDoneTasksHiddenButton) {
-                toggleDoneTasksHiddenButton.addEventListener("click", () => {
-                    toggleDoneTasksHidden();
-                });
-            }
+            toggleDoneTasksHiddenButton.addEventListener("click", () => {
+                toggleDoneTasksHidden();
+            });
         }
     };
     const bindSetAllTasksAsDoneButton = () => {
         if (tasks.length && !tasks.every((task) => task.done)) {
             const setAllTasksAsDoneButton = document.querySelector(".js-setAllTasksAsDoneButton");
-            if (setAllTasksAsDoneButton) {
-                setAllTasksAsDoneButton.addEventListener("click", () => {
-                    setAllTasksAsDone();
-                });
-            }
+            setAllTasksAsDoneButton.addEventListener("click", () => {
+                setAllTasksAsDone();
+            });
         }
     };
     const renderTasks = () => {
@@ -82,8 +78,7 @@
       </li>
       `;
         const tasksList = document.querySelector(".js-tasks");
-        if (tasksList)
-            tasksList.innerHTML = tasks.map(taskToHTML).join("");
+        tasksList.innerHTML = tasks.map(taskToHTML).join("");
     };
     const renderButtons = () => {
         let htmlString = "";
@@ -100,8 +95,7 @@
       `;
         }
         const sectionButtonBox = document.querySelector(".js-sectionButtonsBox");
-        if (sectionButtonBox)
-            sectionButtonBox.innerHTML = htmlString;
+        sectionButtonBox.innerHTML = htmlString;
     };
     const render = () => {
         renderTasks();
@@ -113,28 +107,24 @@
     };
     const clearTaskContent = () => {
         const form = document.querySelector(".js-form");
-        if (form)
-            form.reset();
+        form.reset();
     };
     const onFormSubmit = (event) => {
         event.preventDefault();
         const newTaskContent = document.querySelector(".js-newTask");
-        if (newTaskContent) {
-            if (newTaskContent.value.trim() === "") {
-                clearTaskContent();
-                newTaskContent.focus();
-                return;
-            }
-            addNewTask(newTaskContent.value.trim());
+        if (newTaskContent.value.trim() === "") {
             clearTaskContent();
             newTaskContent.focus();
+            return;
         }
+        addNewTask(newTaskContent.value.trim());
+        clearTaskContent();
+        newTaskContent.focus();
     };
     const init = () => {
         render();
         const form = document.querySelector(".js-form");
-        if (form)
-            form.addEventListener("submit", onFormSubmit);
+        form.addEventListener("submit", onFormSubmit);
     };
     init();
 }
