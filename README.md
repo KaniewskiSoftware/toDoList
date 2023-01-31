@@ -14,6 +14,7 @@ ToDoList allows you to add newTasks, set them as done or undone and also remove 
 
 ## Technologies
 
-- HTML
-- CSS
+- TypeScript
 - JS
+- CSS
+- HTML
